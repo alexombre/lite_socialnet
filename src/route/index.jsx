@@ -9,7 +9,9 @@ import Register from '../pages/Register';
 import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import User from '../pages/User';
-import Navbar from '../components/Navbar'
+import Login from '../pages/Login';
+import Navbar from './components/Navbar';
+import AuthRoute from './components/AuthRoute'
 
 const RouterCustom = () => {
     return (
@@ -21,15 +23,17 @@ const RouterCustom = () => {
                     <Route exact path={`/`}>
                       <Home />
                     </Route>
+                    <AuthRoute path="/profile" component={Profile} />
                     <Route path={`/register`}>
                       <Register />
                     </Route>
-                    <Route path={`/profile`}>
-                      <Profile />
+                    
+                    <Route path={`/login`}>
+                      <Login />
                     </Route>
                   </Switch>
                   <Switch>
-                    <Route path={`/user/:username`}>
+                    <Route path={`/user/:id`}>
                       <User />
                     </Route>
                   </Switch>

@@ -42,7 +42,6 @@ const register = (username, email, password, dispatch) => {
       .then((response) => {
         if (ok) {
           dispatch(registerSuccess(response));
-          console.log(response)
           Cookies.set('token', response.jwt);
         }
         else  
